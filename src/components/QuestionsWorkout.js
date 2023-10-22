@@ -31,8 +31,8 @@ export default function QuestionsWorkout() {
 
 
   return (
-    <div className ="bg-slate-400">
-     <form className="max-w-md mx-auto mt-6">
+    <div className ="bg-slate-400 flex justify-center items-center h-screen" >
+     <form className="max-w-md ">
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="inputField">
           How old are you?
@@ -76,16 +76,12 @@ export default function QuestionsWorkout() {
       
         />
       </div>
-    </form>
-
-
-      <div className='py-10'>
-        {meds!=''&&age!=''&&weight!=''&&
-          (<Link to="/Workout-Preparation" className={buttonLinkClasses} >Next</Link>)
-        } 
+      <div className='py-10 flex justify-between'>
+        
         <Link to="/" className={buttonLinkClasses} >Back</Link>
+        <Link to="/Workout-Preparation" className={buttonLinkClasses} >Next</Link>
       </div>
-
+    </form>
     </div>
   );
 }

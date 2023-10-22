@@ -1,29 +1,27 @@
-// RehabStretches.js
+import {useState} from 'react'
 import React from 'react';
-import { Link } from "react-router-dom";
+import { apiCall } from "../Functions";
+import BodyModel from "./BodyModel";
+import { Spinner } from "@material-tailwind/react";
+import Markdown from 'https://esm.sh/react-markdown@9'
+
+
+function Rehabstretches() {
+  const [muscleSelected, setMuscleSelected] = useState("");
+  const [response, setResponse] = useState({ data: { answer: "" } });
 
 
 
-  const questions =
-  "p-10"
-  const buttonLinkClasses =
-  "py-2 px-4 bg-blue-500 text-white rounded-md text-lg hover:bg-blue-600"
-
-export default function RehabStretches() {
   return (
-    <div className='text-gray-182-189-195'>
-      <h1>This is going to be rehab model</h1>
-
-    
-    
-    
-      <div className = {questions}>
-        <Link to="/" className={buttonLinkClasses} >Back</Link>
-      </div>
-    
-    
-    </div>
-
-    
+    <>
+      <button onClick={ function(){apiCall(response, setResponse, muscleSelected)}
+        }>Send request</button>
+        <Spinner />
+        <h1 className="text-center">{muscleSelected}</h1>
+        <Markdown>{response.data.answer}</Markdown>
+        <BodyModel setMuscleSelected={setMuscleSelected}/>;
+    </>
   );
 }
+
+export default Rehabstretches;

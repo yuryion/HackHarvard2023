@@ -1,5 +1,5 @@
 
-
+import './Title.css'
 
 export default function Title() {
     return (
@@ -12,3 +12,5 @@ export default function Title() {
       
     );
   }
+
+  //<Link to = "/QuestionsRehab" className={buttonLinkClasses}>Rehab stretches</Link>

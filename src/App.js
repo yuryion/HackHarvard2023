@@ -13,8 +13,7 @@ import QuestionsRehab from "./components/QuestionsRehab";
 
 
 function App() {
-  const [muscleSelected, setMuscleSelected] = useState("");
-  const [response, setResponse] = useState({data: {answer: ""}});
+  
 
   return (
     <>
@@ -22,18 +21,14 @@ function App() {
       
       <Routes>
         <Route path = "/" element = {<OpeningButtons/>}/>
-        <Route path = "/Workout-preparation" element = {<WorkoutPreparation setMuscleSelected={setMuscleSelected}/>}/>
+        <Route path = "/Workout-preparation" element = {<WorkoutPreparation/>}/>
         <Route path = "/Rehabstretches" element = {<RehabStretches/>}/>
         <Route path = "/QuestionsWorkout" element = {<QuestionsWorkout/>}/>
         <Route path = "/QuestionsRehab" element = {<QuestionsRehab/>}/>
         
       </Routes>
     </Router>
-    <button onClick={ function(){apiCall(response, setResponse, muscleSelected)}
-    }>Send request</button>
-    <Spinner />
-    <h1 className="text-center">{muscleSelected}</h1>
-    <Markdown>{response.data.answer}</Markdown>
+    
     {/* <h2>{response.data.answer}</h2> */}
     
     </>
