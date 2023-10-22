@@ -31,10 +31,10 @@ export default function QuestionsWorkout() {
 
 
   return (
-    <div className ="bg-slate-400 flex justify-center items-center h-screen" >
+    <div className ="text-white flex justify-center items-center h-screen" >
      <form className="max-w-md ">
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="inputField">
+        <label className="block text-sm font-bold mb-2" htmlFor="inputField">
           How old are you?
         </label>
         <input
@@ -48,7 +48,7 @@ export default function QuestionsWorkout() {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="inputField">
+        <label className="block  text-sm font-bold mb-2" htmlFor="inputField">
           How much do you weigh?
         </label>
         <input
@@ -63,7 +63,7 @@ export default function QuestionsWorkout() {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="inputField">
+        <label className="block text-sm font-bold mb-2" htmlFor="inputField">
           Do you take any medication?
         </label>
         <input

@@ -6,15 +6,22 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body {
+    background-color: #263b77;
+}
 
 .body-model-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-family: sans-serif;
     text-align: center;
-    padding: 10rem;
-
+    padding: 0rem;
+    
 }
 
 .rbh polygon:hover { fill: #757782 !important; }
+
+svg {
+    height: 60vh;
+}
