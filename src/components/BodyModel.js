@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from 'react';
+import {useState} from 'react';
 import Model from "react-body-highlighter";
 
 export default function BodyModel({muscleSelected, setMuscleSelected}) {

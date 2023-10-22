@@ -1,24 +1,40 @@
-import BodyModel from "./BodyModel";
+import BodyModel from "./components/BodyModel";
 import { useState } from 'react';
-import apiCall from './Functions.js'
+import { apiCall } from './Functions.js'
+import { Spinner } from "@material-tailwind/react";
+import Markdown from 'https://esm.sh/react-markdown@9'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import OpeningButtons from './components/OpeningButtons';
+import RehabStretches from './components/RehabStretches';
+import WorkoutPreparation from './components/WorkoutPreparation';
+import QuestionsWorkout from './components/QuestionsWorkout';
+
+
 
 
 function App() {
   const [muscleSelected, setMuscleSelected] = useState("");
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState({data: {answer: ""}});
 
   return (
     <>
-    <button onClick={ function(){
-      const callback = apiCall(muscleSelected);
-      setResponse(callback)
-    }
+    <Router>
       
-
+      <Routes>
+        <Route path = "/" element = {<OpeningButtons/>}/>
+        <Route path = "/Workout-preparation" element = {<WorkoutPreparation setMuscleSelected={setMuscleSelected}/>}/>
+        <Route path = "/Rehab-stretches" element = {<RehabStretches/>}/>
+        <Route path = "/QuestionsWorkout" element = {<QuestionsWorkout/>}/>
+        
+      </Routes>
+    </Router>
+    <button onClick={ function(){apiCall(response, setResponse, muscleSelected)}
     }>Send request</button>
+    <Spinner />
     <h1 className="text-center">{muscleSelected}</h1>
-    <h2>{response}</h2>
-    <BodyModel muscleSelected={muscleSelected} setMuscleSelected={setMuscleSelected}/>
+    <Markdown>{response.data.answer}</Markdown>
+    {/* <h2>{response.data.answer}</h2> */}
+    
     </>
   );
 }
