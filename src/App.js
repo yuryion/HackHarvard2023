@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import BodyModel from "./BodyModel";
+import { useState } from 'react';
+import apiCall from './Functions.js'
+
 
 function App() {
+  const [muscleSelected, setMuscleSelected] = useState("");
+  const [response, setResponse] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <button onClick={ function(){
+      const callback = apiCall(muscleSelected);
+      setResponse(callback)
+    }
+      
+
+    }>Send request</button>
+    <h1 className="text-center">{muscleSelected}</h1>
+    <h2>{response}</h2>
+    <BodyModel muscleSelected={muscleSelected} setMuscleSelected={setMuscleSelected}/>
+    </>
   );
 }
 
