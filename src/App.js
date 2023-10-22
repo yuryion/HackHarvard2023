@@ -8,7 +8,7 @@ import OpeningButtons from './components/OpeningButtons';
 import RehabStretches from './components/RehabStretches';
 import WorkoutPreparation from './components/WorkoutPreparation';
 import QuestionsWorkout from './components/QuestionsWorkout';
-
+import QuestionsRehab from "./components/QuestionsRehab";
 
 
 
@@ -23,8 +23,9 @@ function App() {
       <Routes>
         <Route path = "/" element = {<OpeningButtons/>}/>
         <Route path = "/Workout-preparation" element = {<WorkoutPreparation setMuscleSelected={setMuscleSelected}/>}/>
-        <Route path = "/Rehab-stretches" element = {<RehabStretches/>}/>
+        <Route path = "/Rehabstretches" element = {<RehabStretches/>}/>
         <Route path = "/QuestionsWorkout" element = {<QuestionsWorkout/>}/>
+        <Route path = "/QuestionsRehab" element = {<QuestionsRehab/>}/>
         
       </Routes>
     </Router>

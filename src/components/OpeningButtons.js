@@ -16,7 +16,7 @@ export default function OpeningButtons() {
       </div>
       
       <div>
-        <Link to = "/Rehab-stretches" className={buttonLinkClasses}>Rehab stretches</Link>
+        <Link to = "/QuestionsRehab" className={buttonLinkClasses}>Rehab stretches</Link>
       </div>
     </div>
     </div>

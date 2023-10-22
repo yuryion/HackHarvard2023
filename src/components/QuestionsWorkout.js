@@ -81,7 +81,7 @@ export default function QuestionsWorkout() {
 
       <div className='py-10'>
         {meds!=''&&age!=''&&weight!=''&&
-          (<Link to="/Workout-preparation" className={buttonLinkClasses} >Next</Link>)
+          (<Link to="/Workout-Preparation" className={buttonLinkClasses} >Next</Link>)
         } 
         <Link to="/" className={buttonLinkClasses} >Back</Link>
       </div>
